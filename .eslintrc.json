@@ -9,6 +9,7 @@
 		{
 			"files": ["*.ts", "*.js"],
 			"rules": {
+				"unicorn/no-abusive-eslint-disable": "off",
 				"@nx/enforce-module-boundaries": [
 					"error",
 					{
