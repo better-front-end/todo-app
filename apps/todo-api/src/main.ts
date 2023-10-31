@@ -4,14 +4,14 @@
  */
 
 import express from "express";
-import * as path from "path";
+import * as path from "node:path";
 
 const app = express();
 
 app.use("/assets", express.static(path.join(__dirname, "assets")));
 
-app.get("/api", (req, res) => {
-	res.send({ message: "Welcome to todo-api!" });
+app.get("/api", (request, response) => {
+	response.send({ message: "Welcome to todo-api!" });
 });
 
 const port = process.env.PORT || 3333;
