@@ -13,6 +13,14 @@
 		{
 			"files": ["*.js", "*.jsx"],
 			"rules": {}
+		},
+		{
+			"files": ["*.spec.ts", "*.spec.js"],
+			"plugins": ["jest"],
+			"extends": ["plugin:jest/recommended", "plugin:jest/style"],
+			"env": {
+				"jest": true
+			}
 		}
 	]
 }

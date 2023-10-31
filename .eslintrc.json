@@ -31,14 +31,6 @@
 		{
 			"files": ["*.js"],
 			"extends": ["plugin:@nx/javascript"]
-		},
-		{
-			"files": ["*.spec.ts", "*.spec.js"],
-			"plugins": ["jest"],
-			"extends": ["plugin:jest/recommended"],
-			"env": {
-				"jest": true
-			}
 		}
 	]
 }
