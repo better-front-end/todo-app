@@ -1,0 +1,3 @@
+{
+  "extends": ["@better-front-end/linters/stylelint/stylelint-defaults.json"]
+}
