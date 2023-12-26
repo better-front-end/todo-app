@@ -6,6 +6,7 @@
 import express from "express";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
+import { TodoTask } from "@better-front-end/shared/util-types";
 
 const app = express();
 
@@ -16,8 +17,13 @@ app.use(
 	),
 );
 
-app.get("/api", (request, response) => {
-	response.send({ message: "Welcome to todo-api!" });
+app.get("/api/todo", (request, response) => {
+	const body: TodoTask[] = [
+		{ id: "1", title: "First task" },
+		{ id: "2", title: "Second task" },
+	];
+
+	response.send(body);
 });
 
 const port = process.env.PORT || 3333;
