@@ -17,6 +17,15 @@
 		"paths": {
 			"@better-front-end/shared/util-types": [
 				"libs/shared/util-types/src/index.ts"
+			],
+			"@better-front-end/todo-ui/+state-todo-list": [
+				"libs/todo-ui/+state-todo-list/src/index.ts"
+			],
+			"@better-front-end/todo-ui/feature-todo-list": [
+				"libs/todo-ui/feature-todo-list/src/index.ts"
+			],
+			"@better-front-end/todo-ui/ui-todo-list": [
+				"libs/todo-ui/ui-todo-list/src/index.ts"
 			]
 		}
 	},
