@@ -16,13 +16,7 @@
 		},
 		"lint": {
 			"executor": "@nx/eslint:lint",
-			"outputs": ["{options.outputFile}"],
-			"options": {
-				"lintFilePatterns": [
-					"libs/shared/util-types/**/*.ts",
-					"libs/shared/util-types/package.json"
-				]
-			}
+			"outputs": ["{options.outputFile}"]
 		}
 	},
 	"tags": ["scope:shared", "type:util"]

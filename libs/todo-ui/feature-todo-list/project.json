@@ -10,24 +10,46 @@
 			"executor": "@nx/jest:jest",
 			"outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
 			"options": {
-				"jestConfig": "libs/todo-ui/feature-todo-list/jest.config.ts",
-				"passWithNoTests": true
-			},
-			"configurations": {
-				"ci": {
-					"ci": true,
-					"codeCoverage": true
-				}
+				"jestConfig": "libs/todo-ui/feature-todo-list/jest.config.ts"
 			}
 		},
 		"lint": {
 			"executor": "@nx/eslint:lint",
-			"outputs": ["{options.outputFile}"],
+			"outputs": ["{options.outputFile}"]
+		},
+		"storybook": {
+			"executor": "@storybook/angular:start-storybook",
 			"options": {
-				"lintFilePatterns": [
-					"libs/todo-ui/feature-todo-list/**/*.ts",
-					"libs/todo-ui/feature-todo-list/**/*.html"
-				]
+				"port": 4400,
+				"configDir": "libs/todo-ui/feature-todo-list/.storybook",
+				"browserTarget": "todo-ui/feature-todo-list:build-storybook",
+				"compodoc": false
+			},
+			"configurations": {
+				"ci": {
+					"quiet": true
+				}
+			}
+		},
+		"build-storybook": {
+			"executor": "@storybook/angular:build-storybook",
+			"outputs": ["{options.outputDir}"],
+			"options": {
+				"outputDir": "dist/storybook/todo-ui/feature-todo-list",
+				"configDir": "libs/todo-ui/feature-todo-list/.storybook",
+				"browserTarget": "todo-ui/feature-todo-list:build-storybook",
+				"compodoc": false
+			},
+			"configurations": {
+				"ci": {
+					"quiet": true
+				}
+			}
+		},
+		"test-storybook": {
+			"executor": "nx:run-commands",
+			"options": {
+				"command": "test-storybook -c libs/todo-ui/feature-todo-list/.storybook --url=http://localhost:4400"
 			}
 		}
 	}
